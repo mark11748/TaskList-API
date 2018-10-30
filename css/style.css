@@ -1,0 +1,37 @@
+html {
+  padding: 10px;
+  height:100%;
+  width:100%;
+  z-index: 0;
+  background-image: url('../img/800px-05_camera_painting_motion_blur_experimental_digital_photography_by_Rick_Doble.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-clip: border-box;
+}
+body {
+background-color: inherit;
+}
+
+.format1 {
+  color: white;
+  background-color: black;
+  border: blue 5px outset;
+  border-radius: 8px;
+}
+#LEFT-DISPLAY,#RIGHT-DISPLAY {
+  z-index: 1;
+  min-height: 240px;
+  padding: 10px;
+}
+
+h1,h2,h3 {
+  text-align: center;
+}
+#ERROR-MSG {
+  border: red 5px solid;
+  min-height: 50px;
+}
+#OPTIONS-MENU,#INPUT-addTask>*,#INPUT-editTask>*,#INPUT-removeTask>*,#ERROR-MSG>* {
+  margin-left: 20px;
+}

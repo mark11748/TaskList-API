@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <title>list test</title>
+  </head>
+  <body>
+    <div class="container" id="MAIN">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 format1" id="TITLE">
+          <h2><em>Task Master</em></h2>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-5 format1" id="LEFT-DISPLAY">
+          <div id="OPTIONS">
+            <h3>OPTIONS:</h3>
+            <div id="OPTIONS-MENU">
+              <button type="button" class="btn-success" name="addButton">ADD</button>
+              <button type="button" class="btn-info" name="editButton">EDIT</button>
+              <button type="button" class="btn-danger" name="removeButton">DELETE</button>
+            </div>
+          </div>
+          <div id="INPUT-newTask">
+            <form>
+              <label for="new-name">task name:</label><br>
+              <input type="text" name="new-name"><br>
+              <br>
+              <label for="new-deadLine">deadline:</label><br>
+              <input type="date" name="new-deadLine"><br>
+              <br>
+              <button type="submit" name="submitTask">Add Task</button><br>
+              <button class="cancel">go back</button>
+            </form>
+          </div>
+          <div id="INPUT-editTask">
+            <form>
+              <label for="edit-index">task to edit:</label><br>
+              <input type="number" name="edit-index"><br>
+              <label for="edit-name">task name:</label><br>
+              <input type="text" name="edit-name"><br>
+              <br>
+              <label for="edit-deadLine">deadline:</label><br>
+              <input type="date" name="edit-deadLine"><br>
+              <br>
+              <button type="submit" name="submitEdit">Edit Task</button><br>
+              <button class="cancel">go back</button>
+            </form>
+          </div>
+          <div id="INPUT-removeTask">
+            <form>
+              <label for="delete-index">Select the task to remove. </label><br>
+              <input type="number" name="delete-index"><br>
+              <br>
+              <button type="submit" name="submitRemoval">Remove Task</button><br>
+              <button class="cancel">go back</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-6 format1" id="RIGHT-DISPLAY">
+          <div id="OUTPUT-TASKS">
+            <h3>Task list:</h3>
+            <ul id="LIST">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 format1" id="ERROR-MSG">
+
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+  </body>
+</html>
