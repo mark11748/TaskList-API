@@ -41,7 +41,7 @@ $(document).ready(function(){
     $("#LIST").empty();
     taskList.forEach(function(i,e){
       i.index = e;
-      $("#LIST").append("<li>" + i.index + " : " + i.name + " -- (" + i.deadline + ")</li>");
+      $("#LIST").append("<p>" + i.index + " : " + i.name + " -- (" + i.deadline + ")</p>");
     });
   };
 
@@ -62,8 +62,8 @@ $(document).ready(function(){
     if ( (validText(name)) && (validText(deadLine)) ) {
       new Task(name,deadLine);
     }
-    else if( !(validText(name)) ){ $("#ERROR-MSG").append("<li>Error: *NAME* field was either left empty or invalid</li>"); }
-    else if( !(validText(deadLine)) ) { $("#ERROR-MSG").append("<li>Error: *DEADLINE* field was either left empty or invalid</li>"); }
+    else if( !(validText(name)) ){ $("#ERROR-MSG").append("<p>Error: *NAME* field was either left empty or invalid</p>"); }
+    else if( !(validText(deadLine)) ) { $("#ERROR-MSG").append("<p>Error: *DEADLINE* field was either left empty or invalid</p>"); }
 
     flashErrors();
     listTasks();
@@ -86,17 +86,17 @@ $(document).ready(function(){
     console.log(deadLine+" : "+typeof deadLine);
 
     if ( !isNaN(index) ) {
-      if ( (index < 0) || (index >= taskList.length) ) { $("#ERROR-MSG").append("<li>Error: Selected index is out of bounds.</li>"); }
+      if ( (index < 0) || (index >= taskList.length) ) { $("#ERROR-MSG").append("<p>Error: Selected index is out of bounds.</p>"); }
       else {
         if ( validText(name) ) { taskList[index].name = name; }
-        else { $("#ERROR-MSG").append("<li>Error: *NAME* field was either left empty or invalid</li>"); }
+        else { $("#ERROR-MSG").append("<p>Error: *NAME* field was either left empty or invalid</p>"); }
 
         if ( validText(deadLine) ) { taskList[index].deadline = deadLine; }
-        else { $("#ERROR-MSG").append("<li>Error: *DEADLINE* field was either left empty or invalid</li>"); }
+        else { $("#ERROR-MSG").append("<p>Error: *DEADLINE* field was either left empty or invalid</p>"); }
       }
     }
     else {
-      $("#ERROR-MSG").append("<li>Error: Invalid index given. Must be a number.</li>");
+      $("#ERROR-MSG").append("<p>Error: Invalid index given. Must be a number.</p>");
     }
 
     flashErrors();
@@ -112,11 +112,11 @@ $(document).ready(function(){
   $("#INPUT-removeTask>form").submit(function(event){
     event.preventDefault();
     var index = parseInt( $("input[name='delete-index']").val() );
-
-    if ( (typeof index!="number") ) { $("#ERROR-MSG").append("<li>Error: Invalid index given. Must be a number.</li>"); }
-    else if ( (index >= 0) && (index < taskList.length) ) { $("#ERROR-MSG").append("<li>Error: Selected index is out of bounds.</li>"); }
+    if ( (typeof index!="number") ) { $("#ERROR-MSG").append("<p>Error: Invalid index given. Must be a number.</p>"); }
+    else if ( (index < 0) && (index >= taskList.length) ) { $("#ERROR-MSG").append("<p>Error: Selected index is out of bounds.</p>"); }
     else { taskList.splice(index,1); }
 
+    console.log("index selected for removal: "+index);
     console.log( $("#ERROR-MSG").children() );
     console.log( taskList );
 

@@ -32,6 +32,9 @@ h1,h2,h3 {
   border: red 5px solid;
   min-height: 50px;
 }
+#ERROR-MSG>p {
+  color: red;
+}
 #OPTIONS-MENU,#INPUT-addTask>*,#INPUT-editTask>*,#INPUT-removeTask>*,#ERROR-MSG>* {
   margin-left: 20px;
 }
