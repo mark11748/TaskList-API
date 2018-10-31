@@ -113,7 +113,7 @@ $(document).ready(function(){
     event.preventDefault();
     var index = parseInt( $("input[name='delete-index']").val() );
     if ( (typeof index!="number") ) { $("#ERROR-MSG").append("<p>Error: Invalid index given. Must be a number.</p>"); }
-    else if ( (index < 0) && (index >= taskList.length) ) { $("#ERROR-MSG").append("<p>Error: Selected index is out of bounds.</p>"); }
+    else if ( (index < 0) || (index >= taskList.length) ) { $("#ERROR-MSG").append("<p>Error: Selected index is out of bounds.</p>"); }
     else { taskList.splice(index,1); }
 
     console.log("index selected for removal: "+index);
